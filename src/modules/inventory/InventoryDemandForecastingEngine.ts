@@ -205,3 +205,9 @@ export class InventoryDemandForecastingEngine {
     const safeLeadTime = Math.max(1, leadTimeDays);
     return Math.ceil((dailyDemand * safeLeadTime) + safetyStock);
   }
+
+  /** Calculates Economic Order Quantity (EOQ) */
+  public calculateEOQ(annualDemand: number, setupCostPerOrder: number, holdingCostPerUnit: number): number {
+    if (holdingCostPerUnit <= 0) return 0;
+    return Math.round(Math.sqrt((2 * annualDemand * setupCostPerOrder) / holdingCostPerUnit));
+  }
