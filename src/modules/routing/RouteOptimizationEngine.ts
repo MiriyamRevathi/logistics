@@ -322,3 +322,11 @@ export class RouteOptimizationEngine {
   }
 
 // Pathfinding: Uses Contraction Hierarchies (CH) over OpenStreetMap road networks.
+
+export interface RouteWaypoint {
+  stopIndex: number;
+  lat: number;
+  lon: number;
+  address: string;
+  serviceTimeMinutes: number;
+}
