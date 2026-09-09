@@ -219,3 +219,8 @@ export class ExceptionIncidentEngine {
     };
   }
 }
+
+  /** Logs cargo damage exception incident record */
+  public logDamageException(shipmentId: string, damageDescription: string, estimatedLoss: number) {
+    return { incidentId: `EXP-${Date.now()}`, shipmentId, category: 'CARGO_DAMAGE', damageDescription, estimatedLoss, loggedAt: new Date().toISOString() };
+  }
