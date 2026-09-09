@@ -331,3 +331,9 @@ export interface EdiParseResult<T> {
   payload: T;
   errors: string[];
 }
+
+  /** Extracts total charge from B3 segment of EDI 210 invoice */
+  public parseB3TotalCharge(b3Segment: string): number {
+    const parts = b3Segment.split('*');
+    return parts[3] ? parseFloat(parts[3]) : 0.0;
+  }
