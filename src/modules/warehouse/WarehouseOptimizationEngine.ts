@@ -247,3 +247,8 @@ export class WarehouseOptimizationEngine {
     if (maxVolumeCubicMeters <= 0) return 0;
     return Math.min(100, Math.round((usedVolumeCubicMeters / maxVolumeCubicMeters) * 10000) / 100);
   }
+
+  /** Identifies aisle congestion when active forklifts exceed safe capacity */
+  public isAisleCongested(activeVehicles: number, maxCapacity = 3): boolean {
+    return activeVehicles > maxCapacity;
+  }
