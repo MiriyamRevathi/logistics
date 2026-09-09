@@ -230,3 +230,11 @@ export class AuditComplianceEngine {
     return [headers.join(','), ...rows.map((row) => row.join(','))].join('\n');
   }
 }
+
+  /** Verifies dual-approval requirement for invoice adjustments > $1000 */
+  public isSoxCompliantAdjustment(adjustmentAmount: number, approvalCount: number): boolean {
+    if (Math.abs(adjustmentAmount) >= 1000) {
+      return approvalCount >= 2;
+    }
+    return approvalCount >= 1;
+  }
