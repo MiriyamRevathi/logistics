@@ -188,3 +188,8 @@ export class GlobalEnterpriseSearchEngine {
   public sanitizeSearchQuery(query: string): string {
     return query.replace(/[^a-zA-Z0-9\s\-_]/g, '').trim();
   }
+
+  /** Returns safe empty search response */
+  public getEmptySearchResult() {
+    return { totalHits: 0, items: [], executionTimeMs: 0 };
+  }
