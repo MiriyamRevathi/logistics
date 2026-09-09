@@ -262,3 +262,5 @@ export class WarehouseOptimizationEngine {
   public isRackOverloaded(totalWeightKg: number, maxWeightCapacityKg = 2500): boolean {
     return totalWeightKg > maxWeightCapacityKg;
   }
+
+// Wave Picking: Batches order lines by zone to minimize travel distance for pickers.
