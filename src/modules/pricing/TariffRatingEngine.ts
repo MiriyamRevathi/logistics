@@ -512,3 +512,11 @@ export class TariffRatingEngine {
   }
 
 // Note: Tariff rating calculations adhere to standard FMC and IATA freight rating rules.
+
+  /** Calculates tier discount percentage based on monthly volume */
+  public calculateVolumeDiscountTier(totalMonthlyShipments: number): number {
+    if (totalMonthlyShipments >= 1000) return 0.20;
+    if (totalMonthlyShipments >= 500) return 0.15;
+    if (totalMonthlyShipments >= 100) return 0.10;
+    return 0.0;
+  }
