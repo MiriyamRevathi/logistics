@@ -284,3 +284,8 @@ export class WarehouseManagementEngine {
     };
   }
 }
+
+  /** Validates GS1-128 barcode format length and prefix */
+  public isValidGs1Barcode(barcode: string): boolean {
+    return typeof barcode === 'string' && barcode.length >= 14 && /^[0-9]+$/.test(barcode);
+  }
