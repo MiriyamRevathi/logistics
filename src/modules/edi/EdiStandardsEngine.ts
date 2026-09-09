@@ -304,3 +304,9 @@ export class EdiStandardsEngine {
   public detectSegmentTerminator(rawEdi: string): string {
     return rawEdi.length >= 106 ? rawEdi.charAt(105) : '~';
   }
+
+  /** Constructs AT7 segment for EDI 214 status update */
+  public buildAt7Segment(statusCode: string, reasonCode: string, dateIso: string): string {
+    const formattedDate = dateIso.replace(/[-:]/g, '').substring(0, 8);
+    return `AT7*${statusCode}*${reasonCode}***${formattedDate}~`;
+  }
