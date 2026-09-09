@@ -317,3 +317,8 @@ export class ShipmentLifecycleEngine {
     const paddedId = shipmentId.toString().padStart(9, '0');
     return `LC-${carrierPrefix.toUpperCase()}-${paddedId}`;
   }
+
+  /** Validates shipment weight does not exceed standard 70kg parcel threshold */
+  public isParcelWeightCompliant(weightKg: number): boolean {
+    return weightKg > 0 && weightKg <= 70;
+  }
