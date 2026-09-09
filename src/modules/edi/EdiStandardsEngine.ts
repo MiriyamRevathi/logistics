@@ -356,3 +356,8 @@ AK9*${status}*1*1*1~`;
   public buildGsSegment(functionalCode: string, senderId: string, receiverId: string, groupNum: string): string {
     return `GS*${functionalCode}*${senderId}*${receiverId}*20260909*1715*${groupNum}*X*004010~`;
   }
+
+  /** Formats EDI validation error message with line number */
+  public formatEdiError(lineNum: number, segment: string, msg: string): string {
+    return `[Line ${lineNum}][${segment}]: ${msg}`;
+  }
