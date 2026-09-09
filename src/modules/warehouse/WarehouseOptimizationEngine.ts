@@ -241,3 +241,9 @@ export class WarehouseOptimizationEngine {
     };
   }
 }
+
+  /** Computes bin volume utilization percentage */
+  public calculateBinUtilization(usedVolumeCubicMeters: number, maxVolumeCubicMeters: number): number {
+    if (maxVolumeCubicMeters <= 0) return 0;
+    return Math.min(100, Math.round((usedVolumeCubicMeters / maxVolumeCubicMeters) * 10000) / 100);
+  }
