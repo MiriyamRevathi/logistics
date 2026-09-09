@@ -237,3 +237,8 @@ export class FinancialReconciliationEngine {
     const diffPercent = Math.abs(billedAmount - estimatedAmount) / estimatedAmount * 100;
     return diffPercent <= tolerancePercent;
   }
+
+  /** Formats current time as ISO UTC timestamp string */
+  public getUtcAuditTimestamp(): string {
+    return new Date().toISOString();
+  }
