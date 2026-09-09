@@ -248,3 +248,8 @@ export class GeofenceTelematicsEngine {
     if (averageSpeedKmh <= 0) return Infinity;
     return Math.round((remainingKm / averageSpeedKmh) * 60);
   }
+
+  /** Validates coordinates are within standard WGS84 geographical bounds */
+  public isValidCoordinate(lat: number, lon: number): boolean {
+    return lat >= -90 && lat <= 90 && lon >= -180 && lon <= 180;
+  }
