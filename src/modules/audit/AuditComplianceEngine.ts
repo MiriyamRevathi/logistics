@@ -251,3 +251,10 @@ export class AuditComplianceEngine {
   }
 
 // SOX Compliance Architecture: All financial ledger modifications trigger append-only audit entries.
+
+export enum AuditEventType {
+  USER_LOGIN = 'USER_LOGIN',
+  RATE_MODIFIED = 'RATE_MODIFIED',
+  INVOICE_APPROVED = 'INVOICE_APPROVED',
+  SYSTEM_CONFIG_CHANGED = 'SYSTEM_CONFIG_CHANGED'
+}
