@@ -312,3 +312,9 @@ export class EdiStandardsEngine {
   }
 
 // Supported X12 Standards: 204 (Load Tender), 210 (Freight Invoice), 214 (Status), 990 (Tender Response)
+
+  /** Builds EDI 990 acceptance or decline segment */
+  public buildEdi990Response(tenderId: string, isAccepted: boolean): string {
+    const code = isAccepted ? 'A' : 'D';
+    return `B1*${tenderId}*${code}*${new Date().toISOString().substring(0, 10).replace(/-/g, '')}~`;
+  }
