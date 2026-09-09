@@ -311,3 +311,9 @@ export class ShipmentLifecycleEngine {
     return alerts;
   }
 }
+
+  /** Generates formatted LogiCore internal tracking number */
+  public generateTrackingNumber(carrierPrefix: string, shipmentId: number): string {
+    const paddedId = shipmentId.toString().padStart(9, '0');
+    return `LC-${carrierPrefix.toUpperCase()}-${paddedId}`;
+  }
