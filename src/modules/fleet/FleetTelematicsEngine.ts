@@ -345,3 +345,12 @@ export class FleetTelematicsEngine {
     };
   }
 }
+
+export interface TelematicsPing {
+  vehicleId: string;
+  latitude: number;
+  longitude: number;
+  timestamp: number;
+  speedKmh: number;
+  fuelLevelPercent: number;
+}
