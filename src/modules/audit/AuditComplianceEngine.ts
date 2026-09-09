@@ -238,3 +238,9 @@ export class AuditComplianceEngine {
     }
     return approvalCount >= 1;
   }
+
+  /** Masks bank account number leaving last 4 digits visible */
+  public maskAccountNumber(accountNum: string): string {
+    if (accountNum.length <= 4) return '****';
+    return '*'.repeat(accountNum.length - 4) + accountNum.slice(-4);
+  }
