@@ -505,3 +505,8 @@ export class TariffRatingEngine {
     if (exchangeRate <= 0) throw new Error('Exchange rate must be positive');
     return Math.round(amount * exchangeRate * 100) / 100;
   }
+
+  /** Validates weight bracket boundaries to avoid negative freight calculations */
+  public validateWeightBracket(weightKg: number): boolean {
+    return weightKg > 0 && Number.isFinite(weightKg);
+  }
