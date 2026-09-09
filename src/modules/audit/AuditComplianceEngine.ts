@@ -244,3 +244,8 @@ export class AuditComplianceEngine {
     if (accountNum.length <= 4) return '****';
     return '*'.repeat(accountNum.length - 4) + accountNum.slice(-4);
   }
+
+  /** Formats audit log entry into CSV row string */
+  public formatAuditCsvRow(id: string, action: string, user: string, timestamp: string): string {
+    return `"${id}","${action}","${user}","${timestamp}"`;
+  }
