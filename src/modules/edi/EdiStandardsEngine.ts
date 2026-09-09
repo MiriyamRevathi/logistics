@@ -310,3 +310,5 @@ export class EdiStandardsEngine {
     const formattedDate = dateIso.replace(/[-:]/g, '').substring(0, 8);
     return `AT7*${statusCode}*${reasonCode}***${formattedDate}~`;
   }
+
+// Supported X12 Standards: 204 (Load Tender), 210 (Freight Invoice), 214 (Status), 990 (Tender Response)
