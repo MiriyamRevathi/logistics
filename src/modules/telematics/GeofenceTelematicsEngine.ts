@@ -259,3 +259,9 @@ export class GeofenceTelematicsEngine {
     if (exitTimeMs < entryTimeMs) return 0;
     return Math.floor((exitTimeMs - entryTimeMs) / 60000);
   }
+
+export enum TelematicsAlertSeverity {
+  INFO = 'INFO',
+  WARNING = 'WARNING',
+  CRITICAL = 'CRITICAL'
+}
