@@ -272,3 +272,8 @@ export interface InvoiceLineItem {
     const sumCents = amounts.reduce((acc, a) => acc + Math.round(a * 100), 0);
     return sumCents / 100;
   }
+
+  /** Builds credit memo record for carrier overcharges */
+  public createCreditMemo(originalInvoiceId: string, overchargeAmount: number, reason: string) {
+    return { creditMemoId: `CM-${originalInvoiceId}`, originalInvoiceId, amount: overchargeAmount, reason, created: new Date().toISOString() };
+  }
