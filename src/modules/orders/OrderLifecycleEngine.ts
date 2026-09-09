@@ -419,3 +419,11 @@ export class OrderLifecycleEngine {
   }
 
 // Order Lifecycle: CREATED -> ALLOCATED -> PICKING -> PACKED -> SHIPPED -> DELIVERED
+
+export interface OrderLineItem {
+  lineId: string;
+  sku: string;
+  quantity: number;
+  unitPrice: number;
+  discountAmount: number;
+}
