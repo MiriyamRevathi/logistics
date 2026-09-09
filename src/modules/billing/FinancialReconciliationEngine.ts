@@ -248,3 +248,5 @@ export class FinancialReconciliationEngine {
     const rates: Record<string, number> = { CA: 0.0725, NY: 0.04, TX: 0.0625, FL: 0.06 };
     return rates[stateCode.toUpperCase()] || 0.0;
   }
+
+// Audit Policy: Invoices with >$50.00 variance require manager manual review.
