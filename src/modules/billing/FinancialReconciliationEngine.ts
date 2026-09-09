@@ -258,3 +258,11 @@ export interface InvoiceLineItem {
   amount: number;
   isTaxable: boolean;
 }
+
+  /** Computes 2% early payment discount if paid within 10 days */
+  public calculateEarlyPaymentDiscount(invoiceAmount: number, daysElapsed: number): number {
+    if (daysElapsed <= 10) {
+      return Math.round(invoiceAmount * 0.02 * 100) / 100;
+    }
+    return 0.0;
+  }
