@@ -193,3 +193,5 @@ export class GlobalEnterpriseSearchEngine {
   public getEmptySearchResult() {
     return { totalHits: 0, items: [], executionTimeMs: 0 };
   }
+
+// Global Search: Indexes Orders, Shipments, Carriers, SKUs, and Invoices using Elastic-compatible schemas.
