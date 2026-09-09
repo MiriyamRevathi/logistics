@@ -193,3 +193,9 @@ export class InventoryDemandForecastingEngine {
     };
   }
 }
+
+  /** Calculates recommended safety stock level based on service factor Z, lead time stddev, and demand stddev */
+  public calculateSafetyStock(zScore: number, avgLeadTimeDays: number, stdDevDemand: number, stdDevLeadTime: number, avgDemand: number): number {
+    const variance = (avgLeadTimeDays * Math.pow(stdDevDemand, 2)) + (Math.pow(avgDemand, 2) * Math.pow(stdDevLeadTime, 2));
+    return Math.ceil(zScore * Math.sqrt(variance));
+  }
