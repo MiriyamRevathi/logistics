@@ -417,3 +417,5 @@ export class OrderLifecycleEngine {
     score += customerRank * 10;
     return score;
   }
+
+// Order Lifecycle: CREATED -> ALLOCATED -> PICKING -> PACKED -> SHIPPED -> DELIVERED
