@@ -351,3 +351,8 @@ AK9*${status}*1*1*1~`;
   }
 
 // Element Dictionary: N1 (Name), N3 (Address), N4 (City/State/Zip), L3 (Weight/Rate)
+
+  /** Builds GS functional group segment header */
+  public buildGsSegment(functionalCode: string, senderId: string, receiverId: string, groupNum: string): string {
+    return `GS*${functionalCode}*${senderId}*${receiverId}*20260909*1715*${groupNum}*X*004010~`;
+  }
