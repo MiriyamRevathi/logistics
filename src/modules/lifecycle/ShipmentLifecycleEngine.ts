@@ -338,3 +338,12 @@ export class ShipmentLifecycleEngine {
     }
     return result;
   }
+
+export enum ShipmentStatus {
+  MANIFESTED = 'MANIFESTED',
+  DISPATCHED = 'DISPATCHED',
+  IN_TRANSIT = 'IN_TRANSIT',
+  OUT_FOR_DELIVERY = 'OUT_FOR_DELIVERY',
+  DELIVERED = 'DELIVERED',
+  EXCEPTION = 'EXCEPTION'
+}
