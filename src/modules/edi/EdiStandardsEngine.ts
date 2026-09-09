@@ -349,3 +349,5 @@ AK9*${status}*1*1*1~`;
   public cleanElement(element: string): string {
     return element ? element.trim() : '';
   }
+
+// Element Dictionary: N1 (Name), N3 (Address), N4 (City/State/Zip), L3 (Weight/Rate)
