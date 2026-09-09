@@ -242,3 +242,9 @@ export class FinancialReconciliationEngine {
   public getUtcAuditTimestamp(): string {
     return new Date().toISOString();
   }
+
+  /** Returns applicable tax rate for jurisdiction state code */
+  public getJurisdictionTaxRate(stateCode: string): number {
+    const rates: Record<string, number> = { CA: 0.0725, NY: 0.04, TX: 0.0625, FL: 0.06 };
+    return rates[stateCode.toUpperCase()] || 0.0;
+  }
