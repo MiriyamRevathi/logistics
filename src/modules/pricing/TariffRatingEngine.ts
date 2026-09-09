@@ -543,3 +543,9 @@ export interface FuelSurchargeBreakdown {
     const baseFee = isInternational ? 150.0 : 75.0;
     return hazardClass === 'Class 1' || hazardClass === 'Class 7' ? baseFee * 2 : baseFee;
   }
+
+  /** Calculates dimensional weight in kg using standard IATA divisor (5000) */
+  public calculateDimensionalWeight(lengthCm: number, widthCm: number, heightCm: number, divisor = 5000): number {
+    if (lengthCm <= 0 || widthCm <= 0 || heightCm <= 0) return 0;
+    return (lengthCm * widthCm * heightCm) / divisor;
+  }
