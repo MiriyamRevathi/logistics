@@ -499,3 +499,9 @@ export class TariffRatingEngine {
     };
   }
 }
+
+  /** Converts rated shipping cost to a target ISO currency code */
+  public convertTariffCurrency(amount: number, fromCurrency: string, toCurrency: string, exchangeRate: number): number {
+    if (exchangeRate <= 0) throw new Error('Exchange rate must be positive');
+    return Math.round(amount * exchangeRate * 100) / 100;
+  }
