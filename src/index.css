@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand: #FF4D2A;
+  --color-brand-dark: #E23817;
+  --color-brand-light: #FFF2EE;
+  --color-brand-border: #FFD2C7;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom crisp theme scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
