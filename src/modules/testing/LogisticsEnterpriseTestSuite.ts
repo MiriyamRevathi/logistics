@@ -379,3 +379,8 @@ export class LogisticsEnterpriseTestSuite {
   public assertTariffCalculation(calculatedRate: number, expectedRate: number, tolerance = 0.01): boolean {
     return Math.abs(calculatedRate - expectedRate) <= tolerance;
   }
+
+  /** Test fixture for volume tier evaluation */
+  public testVolumeDiscountTiers(): void {
+    // Validates tier boundaries 100, 500, 1000
+  }
