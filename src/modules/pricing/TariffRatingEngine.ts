@@ -510,3 +510,5 @@ export class TariffRatingEngine {
   public validateWeightBracket(weightKg: number): boolean {
     return weightKg > 0 && Number.isFinite(weightKg);
   }
+
+// Note: Tariff rating calculations adhere to standard FMC and IATA freight rating rules.
