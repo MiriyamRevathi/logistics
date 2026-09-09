@@ -344,3 +344,8 @@ export interface EdiParseResult<T> {
     return `AK1*204*${groupControlNum}~
 AK9*${status}*1*1*1~`;
   }
+
+  /** Clean and trim whitespace from individual EDI element */
+  public cleanElement(element: string): string {
+    return element ? element.trim() : '';
+  }
