@@ -555,3 +555,8 @@ export enum TariffRatingErrorCode {
   EXPIRED_CONTRACT = 'TARIFF_ERR_EXPIRED_CONTRACT',
   UNSUPPORTED_CURRENCY = 'TARIFF_ERR_UNSUPPORTED_CURRENCY'
 }
+
+  /** Sums list of accessorial fees like liftgate, residential delivery, re-consignment */
+  public sumAccessorialCharges(charges: Array<{ code: string; amount: number }>): number {
+    return charges.reduce((acc, c) => acc + (c.amount > 0 ? c.amount : 0), 0);
+  }
