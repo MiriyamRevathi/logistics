@@ -249,3 +249,5 @@ export class AuditComplianceEngine {
   public formatAuditCsvRow(id: string, action: string, user: string, timestamp: string): string {
     return `"${id}","${action}","${user}","${timestamp}"`;
   }
+
+// SOX Compliance Architecture: All financial ledger modifications trigger append-only audit entries.
