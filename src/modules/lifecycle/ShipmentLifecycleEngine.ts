@@ -322,3 +322,8 @@ export class ShipmentLifecycleEngine {
   public isParcelWeightCompliant(weightKg: number): boolean {
     return weightKg > 0 && weightKg <= 70;
   }
+
+  /** Validates POD record contains signature image URL or recipient name */
+  public isValidProofOfDelivery(pod: { recipientName?: string; signatureUrl?: string; timestamp?: string }): boolean {
+    return Boolean(pod && (pod.recipientName || pod.signatureUrl) && pod.timestamp);
+  }
