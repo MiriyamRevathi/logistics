@@ -320,3 +320,5 @@ export class RouteOptimizationEngine {
     const factor = fuelType === 'DIESEL' ? 2.68 : 2.31; // kg CO2 per liter
     return Math.round(fuelConsumedLiters * factor * 100) / 100;
   }
+
+// Pathfinding: Uses Contraction Hierarchies (CH) over OpenStreetMap road networks.
