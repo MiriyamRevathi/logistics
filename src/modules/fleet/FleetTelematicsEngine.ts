@@ -354,3 +354,8 @@ export interface TelematicsPing {
   speedKmh: number;
   fuelLevelPercent: number;
 }
+
+  /** Identifies sudden fuel drop anomalies indicative of leakage or theft */
+  public detectFuelAnomaly(prevLevel: number, currentLevel: number, dropThreshold = 15.0): boolean {
+    return (prevLevel - currentLevel) >= dropThreshold;
+  }
