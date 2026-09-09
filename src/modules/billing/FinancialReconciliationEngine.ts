@@ -277,3 +277,5 @@ export interface InvoiceLineItem {
   public createCreditMemo(originalInvoiceId: string, overchargeAmount: number, reason: string) {
     return { creditMemoId: `CM-${originalInvoiceId}`, originalInvoiceId, amount: overchargeAmount, reason, created: new Date().toISOString() };
   }
+
+// Financial Reconciliation Engine v3.0
