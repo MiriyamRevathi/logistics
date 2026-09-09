@@ -560,3 +560,5 @@ export enum TariffRatingErrorCode {
   public sumAccessorialCharges(charges: Array<{ code: string; amount: number }>): number {
     return charges.reduce((acc, c) => acc + (c.amount > 0 ? c.amount : 0), 0);
   }
+
+// Exported for LogiCore Pricing Module v2.4
