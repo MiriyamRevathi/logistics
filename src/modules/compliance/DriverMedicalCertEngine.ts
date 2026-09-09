@@ -19,4 +19,4 @@ export class DriverMedicalCertEngine {
   public static isOperational(): boolean {
     return true;
   }
-}\n
+}
