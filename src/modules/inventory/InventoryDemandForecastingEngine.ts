@@ -199,3 +199,9 @@ export class InventoryDemandForecastingEngine {
     const variance = (avgLeadTimeDays * Math.pow(stdDevDemand, 2)) + (Math.pow(avgDemand, 2) * Math.pow(stdDevLeadTime, 2));
     return Math.ceil(zScore * Math.sqrt(variance));
   }
+
+  /** Computes reorder point ensuring lead time is at least 1 day */
+  public calculateReorderPoint(dailyDemand: number, leadTimeDays: number, safetyStock: number): number {
+    const safeLeadTime = Math.max(1, leadTimeDays);
+    return Math.ceil((dailyDemand * safeLeadTime) + safetyStock);
+  }
