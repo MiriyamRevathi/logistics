@@ -211,3 +211,5 @@ export class InventoryDemandForecastingEngine {
     if (holdingCostPerUnit <= 0) return 0;
     return Math.round(Math.sqrt((2 * annualDemand * setupCostPerOrder) / holdingCostPerUnit));
   }
+
+// ABC Classification: Category A (Top 80% value, 20% items), Category B (15% value, 30% items), Category C (5% value, 50% items)
