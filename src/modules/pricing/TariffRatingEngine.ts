@@ -527,3 +527,8 @@ export interface FuelSurchargeBreakdown {
   surchargeAmount: number;
   effectiveDate: string;
 }
+
+  /** Applies peak season surcharge to base freight rate */
+  public applyPeakSeasonSurcharge(baseRate: number, isPeakSeason: boolean, multiplier = 1.15): number {
+    return isPeakSeason ? baseRate * multiplier : baseRate;
+  }
