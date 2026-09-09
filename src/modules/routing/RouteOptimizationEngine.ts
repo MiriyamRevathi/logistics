@@ -314,3 +314,9 @@ export class RouteOptimizationEngine {
   public applyTurnPenalties(baseDurationSec: number, uTurnCount: number, penaltyPerUTurnSec = 120): number {
     return baseDurationSec + (uTurnCount * penaltyPerUTurnSec);
   }
+
+  /** Calculates estimated CO2 emissions in kg based on fuel consumption */
+  public estimateCo2EmissionsKg(fuelConsumedLiters: number, fuelType: 'DIESEL' | 'GASOLINE' = 'DIESEL'): number {
+    const factor = fuelType === 'DIESEL' ? 2.68 : 2.31; // kg CO2 per liter
+    return Math.round(fuelConsumedLiters * factor * 100) / 100;
+  }
