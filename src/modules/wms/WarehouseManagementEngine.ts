@@ -289,3 +289,10 @@ export class WarehouseManagementEngine {
   public isValidGs1Barcode(barcode: string): boolean {
     return typeof barcode === 'string' && barcode.length >= 14 && /^[0-9]+$/.test(barcode);
   }
+
+export enum PickTaskStatus {
+  PENDING = 'PENDING',
+  IN_PROGRESS = 'IN_PROGRESS',
+  COMPLETED = 'COMPLETED',
+  CANCELLED = 'CANCELLED'
+}
