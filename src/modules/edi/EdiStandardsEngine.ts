@@ -323,3 +323,11 @@ export class EdiStandardsEngine {
   public formatControlNumber(num: number): string {
     return num.toString().padStart(9, '0');
   }
+
+export interface EdiParseResult<T> {
+  success: boolean;
+  transactionSet: string;
+  controlNumber: string;
+  payload: T;
+  errors: string[];
+}
