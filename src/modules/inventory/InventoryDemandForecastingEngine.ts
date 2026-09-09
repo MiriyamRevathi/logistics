@@ -221,3 +221,8 @@ export interface SkuStockLevel {
   availableQty: number;
   reorderPoint: number;
 }
+
+  /** Forecasts next period demand using Single Exponential Smoothing (alpha parameter) */
+  public forecastExponentialSmoothing(actualDemand: number, previousForecast: number, alpha = 0.2): number {
+    return Math.round((alpha * actualDemand) + ((1 - alpha) * previousForecast));
+  }
