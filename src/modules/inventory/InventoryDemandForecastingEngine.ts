@@ -213,3 +213,11 @@ export class InventoryDemandForecastingEngine {
   }
 
 // ABC Classification: Category A (Top 80% value, 20% items), Category B (15% value, 30% items), Category C (5% value, 50% items)
+
+export interface SkuStockLevel {
+  sku: string;
+  onHandQty: number;
+  allocatedQty: number;
+  availableQty: number;
+  reorderPoint: number;
+}
