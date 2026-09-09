@@ -384,3 +384,8 @@ export class LogisticsEnterpriseTestSuite {
   public testVolumeDiscountTiers(): void {
     // Validates tier boundaries 100, 500, 1000
   }
+
+  /** Mock coordinate pair for warehouse location */
+  public getMockWarehouseCoordinates() {
+    return { lat: 37.7749, lon: -122.4194, name: 'SF Logistics Hub' };
+  }
