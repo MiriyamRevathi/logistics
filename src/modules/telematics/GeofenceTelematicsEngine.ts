@@ -230,3 +230,8 @@ export class GeofenceTelematicsEngine {
     const a = Math.sin(dLat / 2) * Math.sin(dLat / 2) + Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) * Math.sin(dLon / 2) * Math.sin(dLon / 2);
     return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
   }
+
+  /** Validates circular geofence parameters */
+  public isValidGeofenceRadius(radiusMeters: number): boolean {
+    return typeof radiusMeters === 'number' && radiusMeters > 0 && radiusMeters <= 50000;
+  }
