@@ -26,4 +26,8 @@ export class CarrierSafetyScoreEngine {
       alertCategories: alerts
     };
   }
+
+  public static sanitizeDotNumber(dotString: string): string {
+    return dotString.replace(/\D/g, '');
+  }
 }\n
