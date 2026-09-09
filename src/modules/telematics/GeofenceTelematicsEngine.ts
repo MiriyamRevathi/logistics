@@ -242,3 +242,9 @@ export class GeofenceTelematicsEngine {
   }
 
 // Architecture Note: Polygon geofences use Ray-Casting algorithm for point-in-polygon checks.
+
+  /** Estimates remaining travel time in minutes based on average corridor speed */
+  public estimateRemainingMinutes(remainingKm: number, averageSpeedKmh: number): number {
+    if (averageSpeedKmh <= 0) return Infinity;
+    return Math.round((remainingKm / averageSpeedKmh) * 60);
+  }
