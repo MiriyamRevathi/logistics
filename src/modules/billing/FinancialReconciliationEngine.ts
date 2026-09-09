@@ -250,3 +250,11 @@ export class FinancialReconciliationEngine {
   }
 
 // Audit Policy: Invoices with >$50.00 variance require manager manual review.
+
+export interface InvoiceLineItem {
+  invoiceId: string;
+  chargeCode: string;
+  description: string;
+  amount: number;
+  isTaxable: boolean;
+}
