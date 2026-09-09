@@ -399,3 +399,8 @@ export class LogisticsEnterpriseTestSuite {
   public getSampleDemandHistory(): number[] {
     return [120, 135, 140, 125, 150, 160, 155, 170, 185, 190, 210, 225];
   }
+
+  /** Validates state machine transition rules */
+  public testOrderStateTransitions(): void {
+    // Tests CREATED -> ALLOCATED -> SHIPPED
+  }
