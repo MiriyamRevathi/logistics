@@ -403,3 +403,9 @@ export class OrderLifecycleEngine {
     });
     return splitMap;
   }
+
+  /** Validates if order can be safely cancelled */
+  public isOrderCancellable(currentStatus: string): boolean {
+    const nonCancellable = ['SHIPPED', 'DELIVERED', 'IN_TRANSIT'];
+    return !nonCancellable.includes(currentStatus.toUpperCase());
+  }
