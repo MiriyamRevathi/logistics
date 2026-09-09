@@ -327,3 +327,14 @@ export class ShipmentLifecycleEngine {
   public isValidProofOfDelivery(pod: { recipientName?: string; signatureUrl?: string; timestamp?: string }): boolean {
     return Boolean(pod && (pod.recipientName || pod.signatureUrl) && pod.timestamp);
   }
+
+  /** Calculates estimated delivery date skipping weekend days */
+  public addBusinessDays(startDate: Date, daysToAdd: number): Date {
+    const result = new Date(startDate);
+    let added = 0;
+    while (added < daysToAdd) {
+      result.setDate(result.getDate() + 1);
+      if (result.getDay() !== 0 && result.getDay() !== 6) added++;
+    }
+    return result;
+  }
