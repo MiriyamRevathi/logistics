@@ -224,3 +224,8 @@ export class ExceptionIncidentEngine {
   public logDamageException(shipmentId: string, damageDescription: string, estimatedLoss: number) {
     return { incidentId: `EXP-${Date.now()}`, shipmentId, category: 'CARGO_DAMAGE', damageDescription, estimatedLoss, loggedAt: new Date().toISOString() };
   }
+
+  /** Determines if incident alert is duplicate within cooldown window */
+  public isDuplicateAlert(lastAlertTimeMs: number, currentTimeMs: number, cooldownMs = 900000): boolean {
+    return (currentTimeMs - lastAlertTimeMs) < cooldownMs;
+  }
