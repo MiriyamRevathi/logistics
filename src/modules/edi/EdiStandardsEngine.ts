@@ -318,3 +318,8 @@ export class EdiStandardsEngine {
     const code = isAccepted ? 'A' : 'D';
     return `B1*${tenderId}*${code}*${new Date().toISOString().substring(0, 10).replace(/-/g, '')}~`;
   }
+
+  /** Formats control number to mandatory 9-digit zero-padded string */
+  public formatControlNumber(num: number): string {
+    return num.toString().padStart(9, '0');
+  }
