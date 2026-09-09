@@ -366,3 +366,10 @@ export interface TelematicsPing {
   }
 
 // Note: Maintenance schedules are derived from engine runtime hours and odometer mileage.
+
+  /** Computes safety score out of 100 based on harsh braking and speeding incidents */
+  public computeDriverSafetyScore(harshBrakingEvents: number, speedingEvents: number, distanceKm: number): number {
+    const penalty = (harshBrakingEvents * 5) + (speedingEvents * 3);
+    const score = 100 - (penalty / (distanceKm / 100 || 1));
+    return Math.max(0, Math.min(100, Math.round(score)));
+  }
