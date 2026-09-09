@@ -266,3 +266,9 @@ export interface InvoiceLineItem {
     }
     return 0.0;
   }
+
+  /** Sums line item amounts preventing JS floating point precision issues */
+  public sumInvoiceLines(amounts: number[]): number {
+    const sumCents = amounts.reduce((acc, a) => acc + Math.round(a * 100), 0);
+    return sumCents / 100;
+  }
