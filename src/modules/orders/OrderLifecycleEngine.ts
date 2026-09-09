@@ -427,3 +427,9 @@ export interface OrderLineItem {
   unitPrice: number;
   discountAmount: number;
 }
+
+  /** Calculates grand total order cost including taxes and shipping */
+  public calculateOrderGrandTotal(subtotal: number, taxRate: number, shippingFee: number): number {
+    const taxAmount = subtotal * taxRate;
+    return Math.round((subtotal + taxAmount + shippingFee) * 100) / 100;
+  }
