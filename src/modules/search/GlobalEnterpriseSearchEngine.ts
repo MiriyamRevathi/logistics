@@ -183,3 +183,8 @@ export class GlobalEnterpriseSearchEngine {
     return Array.from(suggestions);
   }
 }
+
+  /** Sanitizes user search query to prevent injection characters */
+  public sanitizeSearchQuery(query: string): string {
+    return query.replace(/[^a-zA-Z0-9\s\-_]/g, '').trim();
+  }
