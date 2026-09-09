@@ -299,3 +299,8 @@ export class EdiStandardsEngine {
       senderId: segments[6]?.trim()
     };
   }
+
+  /** Extracts custom segment terminator from ISA header byte position 105 */
+  public detectSegmentTerminator(rawEdi: string): string {
+    return rawEdi.length >= 106 ? rawEdi.charAt(105) : '~';
+  }
