@@ -392,3 +392,14 @@ export class OrderLifecycleEngine {
     return results;
   }
 }
+
+  /** Splits single order into sub-orders based on inventory warehouse locations */
+  public splitOrderLinesByWarehouse(orderId: string, items: Array<{ sku: string; qty: number; whId: string }>): Map<string, Array<{ sku: string; qty: number }>> {
+    const splitMap = new Map<string, Array<{ sku: string; qty: number }>>();
+    items.forEach(item => {
+      const existing = splitMap.get(item.whId) || [];
+      existing.push({ sku: item.sku, qty: item.qty });
+      splitMap.set(item.whId, existing);
+    });
+    return splitMap;
+  }
