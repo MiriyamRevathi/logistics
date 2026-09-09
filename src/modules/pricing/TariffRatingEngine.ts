@@ -532,3 +532,8 @@ export interface FuelSurchargeBreakdown {
   public applyPeakSeasonSurcharge(baseRate: number, isPeakSeason: boolean, multiplier = 1.15): number {
     return isPeakSeason ? baseRate * multiplier : baseRate;
   }
+
+  /** Ensures total freight charge does not drop below contract minimum floor */
+  public enforceMinimumBillableCharge(calculatedCharge: number, minFloor: number): number {
+    return Math.max(calculatedCharge, minFloor);
+  }
