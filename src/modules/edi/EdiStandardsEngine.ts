@@ -289,3 +289,13 @@ export class EdiStandardsEngine {
     return { rawEdi, parsed };
   }
 }
+
+  /** Parses basic segments from X12 EDI 204 shipment tender */
+  public parseEdi204ControlHeader(rawEdiContent: string): { isaControlNumber?: string; senderId?: string } {
+    if (!rawEdiContent.startsWith('ISA')) return {};
+    const segments = rawEdiContent.split('*');
+    return {
+      isaControlNumber: segments[13]?.trim(),
+      senderId: segments[6]?.trim()
+    };
+  }
