@@ -281,3 +281,9 @@ export class ProcurementLifecycleEngine {
     };
   }
 }
+
+  /** Selects winning carrier bid based on cost score and carrier rating */
+  public scoreCarrierBid(rateQuote: number, carrierRatingStars: number): number {
+    if (rateQuote <= 0) return 0;
+    return Math.round((carrierRatingStars * 20) - (rateQuote / 100));
+  }
