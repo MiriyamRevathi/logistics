@@ -549,3 +549,9 @@ export interface FuelSurchargeBreakdown {
     if (lengthCm <= 0 || widthCm <= 0 || heightCm <= 0) return 0;
     return (lengthCm * widthCm * heightCm) / divisor;
   }
+
+export enum TariffRatingErrorCode {
+  INVALID_WEIGHT = 'TARIFF_ERR_INVALID_WEIGHT',
+  EXPIRED_CONTRACT = 'TARIFF_ERR_EXPIRED_CONTRACT',
+  UNSUPPORTED_CURRENCY = 'TARIFF_ERR_UNSUPPORTED_CURRENCY'
+}
