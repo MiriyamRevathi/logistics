@@ -195,3 +195,11 @@ export class GlobalEnterpriseSearchEngine {
   }
 
 // Global Search: Indexes Orders, Shipments, Carriers, SKUs, and Invoices using Elastic-compatible schemas.
+
+export interface SearchResultItem {
+  id: string;
+  entityType: 'ORDER' | 'SHIPMENT' | 'CARRIER' | 'INVOICE';
+  title: string;
+  snippet: string;
+  relevanceScore: number;
+}
