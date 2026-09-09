@@ -30,4 +30,8 @@ export class CarrierSafetyScoreEngine {
   public static sanitizeDotNumber(dotString: string): string {
     return dotString.replace(/\D/g, '');
   }
+
+  public static canAssignLoad(isSafetyCompliant: boolean, isInsuranceActive: boolean): boolean {
+    return isSafetyCompliant && isInsuranceActive;
+  }
 }\n
