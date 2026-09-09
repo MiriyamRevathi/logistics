@@ -537,3 +537,9 @@ export interface FuelSurchargeBreakdown {
   public enforceMinimumBillableCharge(calculatedCharge: number, minFloor: number): number {
     return Math.max(calculatedCharge, minFloor);
   }
+
+  /** Calculates HAZMAT compliance fee based on UN hazard class */
+  public calculateHazmatHandlingFee(hazardClass: string, isInternational: boolean): number {
+    const baseFee = isInternational ? 150.0 : 75.0;
+    return hazardClass === 'Class 1' || hazardClass === 'Class 7' ? baseFee * 2 : baseFee;
+  }
