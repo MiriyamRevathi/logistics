@@ -433,3 +433,11 @@ export interface OrderLineItem {
     const taxAmount = subtotal * taxRate;
     return Math.round((subtotal + taxAmount + shippingFee) * 100) / 100;
   }
+
+  /** Evaluates order fraud risk score (0-100) */
+  public evaluateFraudRiskScore(billingCountry: string, shippingCountry: string, orderValue: number): number {
+    let score = 0;
+    if (billingCountry !== shippingCountry) score += 35;
+    if (orderValue > 5000) score += 25;
+    return score;
+  }
