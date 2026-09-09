@@ -409,3 +409,11 @@ export class OrderLifecycleEngine {
     const nonCancellable = ['SHIPPED', 'DELIVERED', 'IN_TRANSIT'];
     return !nonCancellable.includes(currentStatus.toUpperCase());
   }
+
+  /** Computes order dispatch priority score based on SLA service tier and customer VIP rank */
+  public computeOrderPriorityScore(isSlaExpedited: boolean, customerRank: number, ageHours: number): number {
+    let score = ageHours * 2;
+    if (isSlaExpedited) score += 100;
+    score += customerRank * 10;
+    return score;
+  }
