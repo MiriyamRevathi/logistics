@@ -252,3 +252,8 @@ export class WarehouseOptimizationEngine {
   public isAisleCongested(activeVehicles: number, maxCapacity = 3): boolean {
     return activeVehicles > maxCapacity;
   }
+
+  /** Determines if inbound shipment should bypass storage directly to outbound staging */
+  public isCrossDockEligible(inboundSku: string, outboundDemandUnits: number, inboundUnits: number): boolean {
+    return outboundDemandUnits > 0 && inboundUnits <= outboundDemandUnits;
+  }
