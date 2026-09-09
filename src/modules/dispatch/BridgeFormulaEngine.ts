@@ -8,4 +8,8 @@ export class BridgeFormulaEngine {
     // Absolute federal legal cap is 80,000 lbs on interstate highways without special permit
     return Math.min(80000, Math.round(maxWeight));
   }
+
+  public static validateAxleParameters(distanceFeet: number, axles: number): boolean {
+    return distanceFeet > 0 && axles >= 2 && axles <= 9;
+  }
 }\n
