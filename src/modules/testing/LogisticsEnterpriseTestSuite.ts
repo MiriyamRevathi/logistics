@@ -374,3 +374,8 @@ export class LogisticsEnterpriseTestSuite {
     }
   }
 }
+
+  /** Validates pricing engine outputs against expected contract rates */
+  public assertTariffCalculation(calculatedRate: number, expectedRate: number, tolerance = 0.01): boolean {
+    return Math.abs(calculatedRate - expectedRate) <= tolerance;
+  }
