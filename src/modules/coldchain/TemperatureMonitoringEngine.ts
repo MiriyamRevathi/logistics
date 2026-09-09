@@ -60,4 +60,9 @@ export class TemperatureMonitoringEngine {
 
     return alerts;
   }
+
+  public static isSensorStale(lastPingIso: string, maxIntervalMinutes = 15): boolean {
+    const lastPing = new Date(lastPingIso).getTime();
+    return (Date.now() - lastPing) > (maxIntervalMinutes * 60 * 1000);
+  }
 }\n
