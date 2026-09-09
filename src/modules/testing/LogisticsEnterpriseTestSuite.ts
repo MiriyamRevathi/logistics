@@ -404,3 +404,8 @@ export class LogisticsEnterpriseTestSuite {
   public testOrderStateTransitions(): void {
     // Tests CREATED -> ALLOCATED -> SHIPPED
   }
+
+  /** Returns sample invoice object for reconciliation test cases */
+  public getSampleCarrierInvoice() {
+    return { invoiceId: 'INV-99201', carrier: 'FedEx Freight', amount: 1450.75, status: 'UNPAID' };
+  }
