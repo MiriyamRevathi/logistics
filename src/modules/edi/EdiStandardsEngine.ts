@@ -361,3 +361,5 @@ AK9*${status}*1*1*1~`;
   public formatEdiError(lineNum: number, segment: string, msg: string): string {
     return `[Line ${lineNum}][${segment}]: ${msg}`;
   }
+
+// ANSI X12 Release 004010 Logistics Standard Compliant
