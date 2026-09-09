@@ -32,4 +32,12 @@ export class DockSchedulingEngine {
       return Math.max(start, apptStart) < Math.min(end, apptEnd);
     });
   }
+
+  public static normalizeTimestamp(isoString: string): string {
+    const date = new Date(isoString);
+    if (isNaN(date.getTime())) {
+      throw new Error(`Invalid ISO timestamp provided: ${isoString}`);
+    }
+    return date.toISOString();
+  }
 }\n
