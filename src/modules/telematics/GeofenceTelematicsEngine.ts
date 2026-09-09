@@ -253,3 +253,9 @@ export class GeofenceTelematicsEngine {
   public isValidCoordinate(lat: number, lon: number): boolean {
     return lat >= -90 && lat <= 90 && lon >= -180 && lon <= 180;
   }
+
+  /** Calculates total dwell time in minutes from entry and exit timestamps */
+  public calculateDwellTimeMinutes(entryTimeMs: number, exitTimeMs: number): number {
+    if (exitTimeMs < entryTimeMs) return 0;
+    return Math.floor((exitTimeMs - entryTimeMs) / 60000);
+  }
