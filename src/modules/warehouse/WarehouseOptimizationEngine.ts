@@ -257,3 +257,8 @@ export class WarehouseOptimizationEngine {
   public isCrossDockEligible(inboundSku: string, outboundDemandUnits: number, inboundUnits: number): boolean {
     return outboundDemandUnits > 0 && inboundUnits <= outboundDemandUnits;
   }
+
+  /** Validates rack weight load against structural rating */
+  public isRackOverloaded(totalWeightKg: number, maxWeightCapacityKg = 2500): boolean {
+    return totalWeightKg > maxWeightCapacityKg;
+  }
