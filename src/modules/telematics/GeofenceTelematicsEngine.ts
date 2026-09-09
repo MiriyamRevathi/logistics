@@ -240,3 +240,5 @@ export class GeofenceTelematicsEngine {
   public isSpeedingViolation(currentSpeedKmh: number, maxCorridorLimitKmh: number, toleranceKmh = 5): boolean {
     return currentSpeedKmh > (maxCorridorLimitKmh + toleranceKmh);
   }
+
+// Architecture Note: Polygon geofences use Ray-Casting algorithm for point-in-polygon checks.
