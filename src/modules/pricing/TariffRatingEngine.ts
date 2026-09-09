@@ -520,3 +520,10 @@ export class TariffRatingEngine {
     if (totalMonthlyShipments >= 100) return 0.10;
     return 0.0;
   }
+
+export interface FuelSurchargeBreakdown {
+  baseRate: number;
+  fuelIndex: number;
+  surchargeAmount: number;
+  effectiveDate: string;
+}
