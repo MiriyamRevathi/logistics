@@ -359,3 +359,8 @@ export interface TelematicsPing {
   public detectFuelAnomaly(prevLevel: number, currentLevel: number, dropThreshold = 15.0): boolean {
     return (prevLevel - currentLevel) >= dropThreshold;
   }
+
+  /** Determines if vehicle is idling excessively with engine running but speed 0 */
+  public isExcessiveIdling(speedKmh: number, engineOn: boolean, idleDurationMin: number, maxAllowedMin = 15): boolean {
+    return engineOn && speedKmh === 0 && idleDurationMin > maxAllowedMin;
+  }
