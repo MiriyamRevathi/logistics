@@ -389,3 +389,8 @@ export class LogisticsEnterpriseTestSuite {
   public getMockWarehouseCoordinates() {
     return { lat: 37.7749, lon: -122.4194, name: 'SF Logistics Hub' };
   }
+
+  /** Sample ISA header segment for testing parser */
+  public getSampleIsaHeader(): string {
+    return 'ISA*00*          *00*          *ZZ*SENDER         *ZZ*RECEIVER       *260909*1715*U*00401*000000001*0*P*>~';
+  }
