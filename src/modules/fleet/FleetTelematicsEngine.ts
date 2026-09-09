@@ -364,3 +364,5 @@ export interface TelematicsPing {
   public isExcessiveIdling(speedKmh: number, engineOn: boolean, idleDurationMin: number, maxAllowedMin = 15): boolean {
     return engineOn && speedKmh === 0 && idleDurationMin > maxAllowedMin;
   }
+
+// Note: Maintenance schedules are derived from engine runtime hours and odometer mileage.
