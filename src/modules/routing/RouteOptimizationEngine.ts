@@ -309,3 +309,8 @@ export class RouteOptimizationEngine {
     }
     return route;
   }
+
+  /** Adds penalty seconds to route duration for illegal or sharp U-turns */
+  public applyTurnPenalties(baseDurationSec: number, uTurnCount: number, penaltyPerUTurnSec = 120): number {
+    return baseDurationSec + (uTurnCount * penaltyPerUTurnSec);
+  }
