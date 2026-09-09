@@ -286,3 +286,26 @@ export class RouteOptimizationEngine {
     };
   }
 }
+
+  /** Orders delivery stop indices using greedy nearest-neighbor route heuristic */
+  public sortWaypointsNearestNeighbor(distancesMatrix: number[][]): number[] {
+    const visited = new Set<number>([0]);
+    const route = [0];
+    let current = 0;
+    while (route.length < distancesMatrix.length) {
+      let nearest = -1;
+      let minDist = Infinity;
+      for (let next = 0; next < distancesMatrix.length; next++) {
+        if (!visited.has(next) && distancesMatrix[current][next] < minDist) {
+          minDist = distancesMatrix[current][next];
+          nearest = next;
+        }
+      }
+      if (nearest !== -1) {
+        visited.add(nearest);
+        route.push(nearest);
+        current = nearest;
+      }
+    }
+    return route;
+  }
