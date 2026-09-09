@@ -226,3 +226,5 @@ export interface SkuStockLevel {
   public forecastExponentialSmoothing(actualDemand: number, previousForecast: number, alpha = 0.2): number {
     return Math.round((alpha * actualDemand) + ((1 - alpha) * previousForecast));
   }
+
+// Module Build Tag: INV-2026.09-STABLE
