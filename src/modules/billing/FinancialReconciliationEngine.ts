@@ -231,3 +231,9 @@ export class FinancialReconciliationEngine {
     };
   }
 }
+
+  /** Reconciles carrier invoice billed amount against rated contract estimate */
+  public isInvoiceReconciled(billedAmount: number, estimatedAmount: number, tolerancePercent = 2.0): boolean {
+    const diffPercent = Math.abs(billedAmount - estimatedAmount) / estimatedAmount * 100;
+    return diffPercent <= tolerancePercent;
+  }
