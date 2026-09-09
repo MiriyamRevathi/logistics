@@ -235,3 +235,8 @@ export class GeofenceTelematicsEngine {
   public isValidGeofenceRadius(radiusMeters: number): boolean {
     return typeof radiusMeters === 'number' && radiusMeters > 0 && radiusMeters <= 50000;
   }
+
+  /** Evaluates if current speed exceeds maximum corridor threshold */
+  public isSpeedingViolation(currentSpeedKmh: number, maxCorridorLimitKmh: number, toleranceKmh = 5): boolean {
+    return currentSpeedKmh > (maxCorridorLimitKmh + toleranceKmh);
+  }
