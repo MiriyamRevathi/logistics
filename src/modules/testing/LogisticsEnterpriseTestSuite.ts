@@ -409,3 +409,12 @@ export class LogisticsEnterpriseTestSuite {
   public getSampleCarrierInvoice() {
     return { invoiceId: 'INV-99201', carrier: 'FedEx Freight', amount: 1450.75, status: 'UNPAID' };
   }
+
+  /** Returns sample 3x3 distance matrix for TSP testing */
+  public getSampleDistanceMatrix(): number[][] {
+    return [
+      [0, 15, 25],
+      [15, 0, 10],
+      [25, 10, 0]
+    ];
+  }
