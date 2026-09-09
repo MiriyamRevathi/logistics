@@ -337,3 +337,10 @@ export interface EdiParseResult<T> {
     const parts = b3Segment.split('*');
     return parts[3] ? parseFloat(parts[3]) : 0.0;
   }
+
+  /** Generates AK1/AK9 segments for EDI 997 acknowledgment */
+  public buildEdi997Ack(groupControlNum: string, isAccepted: boolean): string {
+    const status = isAccepted ? 'A' : 'R';
+    return `AK1*204*${groupControlNum}~
+AK9*${status}*1*1*1~`;
+  }
