@@ -1,10 +1,10 @@
-﻿# 🚚 LogiCore Supply Chain OS & Logistico Platform
+﻿# LogiCore Supply Chain OS & Logistico Platform
 
 **LogiCore** is an enterprise logistics and supply chain management platform. It provides end-to-end freight tracking, multi-warehouse inventory management, fleet telematics, route optimization, and 8 role-specific operational dashboards.
 
 ---
 
-## 🌟 Key Features
+##  Key Features
 
 - **8 Role-Based Dashboards**: Custom portals for Operations, Executives, Fleet Managers, Warehouse Supervisors, Drivers, Customers, and System Admins.
 - **Automated Order Fulfillment**: Multi-warehouse split order fulfillment, priority allocation, wave releases, and backorder tracking.
@@ -15,7 +15,7 @@
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 logicore_src/ │ 
 ├── 📂 public/ # Static assets and media files │
 ├── 📂 src/ # Application Source Code │ ├── App.tsx # Main React component entry point │ ├── main.tsx # App renderer root │ ├── index.css # Global styling (Tailwind CSS) │ ├── types.ts # TypeScript data interfaces (Shipment, Vehicle, Order) │ ├── mockData.ts # Initial demo dataset (Orders, Fleet, Drivers, Warehouses) │ │ │ 
